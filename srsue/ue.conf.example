@@ -348,6 +348,8 @@ enable = false
 # force_N_id_2: Force using a specific PSS (set to -1 to allow all PSSs).
 # force_N_id_1: Force using a specific SSS (set to -1 to allow all SSSs).
 #
+# fake_rnti : false, true -to genterate fake RNTI for 50% PUSCH PDU (each 2nd tousand TTI have fixed RNTI = 0xFFFC)
+# fake_rnti = false
 #####################################################################
 [phy]
 #rx_gain_offset      = 62
@@ -381,7 +383,7 @@ enable = false
 
 #force_N_id_2           = 1
 #force_N_id_1           = 10
-
+# fake_rnti = true
 #####################################################################
 # PHY NR specific configuration options
 #

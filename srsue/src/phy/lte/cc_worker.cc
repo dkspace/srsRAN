@@ -662,11 +662,12 @@ bool cc_worker::work_ul(srsran_uci_data_t* uci_data)
   // Set UL RNTI
   if (ul_grant_available || ul_mac_grant.phich_available) {
     ue_ul_cfg.ul_cfg.pusch.rnti = dci_ul.rnti;
-  //set fake rnti for second 1000 TTIs    
-    if ((CURRENT_TTI_TX /1000)% 2 == 0 )
-    {
-      ue_ul_cfg.ul_cfg.pusch.rnti = SRSRAN_FAKERNTI;
-    }
+     //set fake rnti for each 2nd 1000 of TTI
+      if (phy->args->fake_rnti){
+          if ((CURRENT_TTI_TX /1000)% 2 == 0 ){
+            ue_ul_cfg.ul_cfg.pusch.rnti = SRSRAN_FAKERNTI;
+          }
+      } 
   } else {
     ue_ul_cfg.ul_cfg.pucch.rnti = phy->stack->get_ul_sched_rnti(CURRENT_TTI_TX);
   }
