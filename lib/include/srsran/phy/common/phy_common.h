@@ -91,6 +91,7 @@ typedef enum { SRSRAN_SF_NORM = 0, SRSRAN_SF_MBSFN } srsran_sf_t;
 #define SRSRAN_SIRNTI 0xFFFF
 #define SRSRAN_PRNTI 0xFFFE
 #define SRSRAN_MRNTI 0xFFFD
+#define SRSRAN_FAKERNTI 0xFFFC
 
 #define SRSRAN_RNTI_ISRAR(rnti) (rnti >= SRSRAN_RARNTI_START && rnti <= SRSRAN_RARNTI_END)
 #define SRSRAN_RNTI_ISUSER(rnti) (rnti >= SRSRAN_CRNTI_START && rnti <= SRSRAN_CRNTI_END)
