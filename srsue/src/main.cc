@@ -442,10 +442,10 @@ static int parse_args(all_args_t* args, int argc, char* argv[])
       bpo::value<bool>(&args->phy.nr_store_pdsch_ko)->default_value(false),
       "Dumps the PDSCH baseband samples into a file on KO reception.")
 
-   // #Fake RNTI
+   // #dummy RNTI
         ("phy.fake_rnti",
-      bpo::value<bool>(&args->phy.fake_rnti)->default_value(false),
-      "To enable generation Fake RNTI,  parameter added to config.")
+      bpo::value<bool>(&args->phy.dummy_rnti)->default_value(false),
+      "To enable dummy RNTI on pusch, parameter added to config.")
 
     // UE simulation args
     ("sim.airplane_t_on_ms",
