@@ -663,7 +663,7 @@ bool cc_worker::work_ul(srsran_uci_data_t* uci_data)
   if (ul_grant_available || ul_mac_grant.phich_available) {
     ue_ul_cfg.ul_cfg.pusch.rnti = dci_ul.rnti;
      //set dummy rnti for each 2nd 1000 of TTI
-      if (phy->args->fake_rnti){
+      if (phy->args->dummy_rnti){
           if ((CURRENT_TTI_TX /1000)% 2 == 0 ){
             ue_ul_cfg.ul_cfg.pusch.rnti = SRSRAN_dummyRNTI;
           }
